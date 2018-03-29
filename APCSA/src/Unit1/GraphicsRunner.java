@@ -1,6 +1,8 @@
 package Unit1;
 
 import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GraphicsRunner extends JFrame
 {
@@ -9,19 +11,15 @@ public class GraphicsRunner extends JFrame
 
 	public GraphicsRunner()
 	{
-		super("Graphics Runner");
-		
+		super("MAKE YOUR OWN SHAPE");
+
 		setSize(WIDTH,HEIGHT);
 
-		getContentPane().add(new SmileyFace());
-		
-		//getContentPane().add(new BigHouse());		
-		
-		//getContentPane().add(new Robot());
-		
+		getContentPane().add(new ShapePanel());
+
 		setVisible(true);
 	}
-	
+
 	public static void main( String args[] )
 	{
 		GraphicsRunner run = new GraphicsRunner();
