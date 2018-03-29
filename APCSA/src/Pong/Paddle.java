@@ -14,6 +14,9 @@ public class Paddle extends Block
       speed =5;
    }
 
+   public Paddle (int s) {
+	   s=speed;
+   }
 
    //add the other Paddle constructors
 

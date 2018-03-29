@@ -75,8 +75,18 @@ public class Pong extends Canvas implements KeyListener, Runnable
 
 
 
-		//see if the ball hits the left paddle
-		
+		if( (ball’s x &lt;= left paddle’s x +left paddle’s width+abs(ball x Spd)
+		&amp;&amp;
+		( balls’s y &gt;= left paddle’s y &amp;&amp;
+		balls’s y &lt;= left paddle’s y + left paddle’s height ||
+		ball’s y + ball’s height &gt;= left paddle’s y &amp;&amp;
+		ball’s y + ball’s height &lt; left paddle’s y + paddle’s height ) )
+		{
+		if( balls’s x &lt;= left paddle’s x +left paddle’s width – abs(ball x Spd )
+		set Y speed to negative of current speed
+		else
+		set X speed to negative of current speed
+		}		
 		
 		
 		//see if the ball hits the right paddle
