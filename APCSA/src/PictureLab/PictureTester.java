@@ -17,7 +17,21 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
+  public static void testNegate()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.negate();
+    beach.explore();
+  }
   
+  public static void testFixUnderWater() {
+	  Picture water = new Picture("water.jpg");
+	  water.explore();
+	  water.fixUnderwater();
+	  water.explore();
+  }
+   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -59,7 +73,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+	  testFixUnderWater();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
