@@ -58,22 +58,20 @@ public class PictureTester {
 		caterpillar.mirrorHorizontalBottomToTop();
 		caterpillar.explore();
 	}
-	
-	public static void testMirrorDiagonal()
-	  {
-	    Picture caterpillar = new Picture("caterpillar.jpg");
-	    caterpillar.explore();
-	    caterpillar.mirrorDiagonal();
-	    caterpillar.explore();
-	  }
-	public static void testMirrorDiagonalBottomToTop()
-	  {
-	    Picture caterpillar = new Picture("caterpillar.jpg");
-	    caterpillar.explore();
-	    caterpillar.mirrorDiagonalBottomToTop();
-	    caterpillar.explore();
-	  }
-	
+
+	public static void testMirrorDiagonal() {
+		Picture caterpillar = new Picture("caterpillar.jpg");
+		caterpillar.explore();
+		caterpillar.mirrorDiagonal();
+		caterpillar.explore();
+	}
+
+	public static void testMirrorDiagonalBottomToTop() {
+		Picture caterpillar = new Picture("caterpillar.jpg");
+		caterpillar.explore();
+		caterpillar.mirrorDiagonalBottomToTop();
+		caterpillar.explore();
+	}
 
 	/** Method to test mirrorTemple */
 	public static void testMirrorTemple() {
@@ -82,22 +80,20 @@ public class PictureTester {
 		temple.mirrorTemple();
 		temple.explore();
 	}
-	
-	public static void testMirrorArms()
-	  {
-	    Picture snowman = new Picture("snowman.jpg");
-	    snowman.explore();
-	    snowman.mirrorArms();
-	    snowman.explore();
-	  }
-	  
-	  public static void testMirrorGull()
-	  {
-	    Picture seagull = new Picture("seagull.jpg");
-	    seagull.explore();
-	    seagull.mirrorGull();
-	    seagull.explore();
-	  }
+
+	public static void testMirrorArms() {
+		Picture snowman = new Picture("snowman.jpg");
+		snowman.explore();
+		snowman.mirrorArms();
+		snowman.explore();
+	}
+
+	public static void testMirrorGull() {
+		Picture seagull = new Picture("seagull.jpg");
+		seagull.explore();
+		seagull.mirrorGull();
+		seagull.explore();
+	}
 
 	/** Method to test the collage method */
 	public static void testCollage() {
@@ -105,17 +101,24 @@ public class PictureTester {
 		canvas.createCollage();
 		canvas.explore();
 	}
-	public static void testmyCollage(){
+
+	public static void testmyCollage() {
 		Picture canvas = new Picture("640x480.jpg");
-		  canvas.myCollage();
-		  canvas.explore();
-	  }
+		canvas.myCollage();
+		canvas.explore();
+	}
 
 	/** Method to test edgeDetection */
 	public static void testEdgeDetection() {
 		Picture swan = new Picture("swan.jpg");
 		swan.edgeDetection(10);
 		swan.explore();
+	}
+
+	public static void testBlur() {
+		Picture flower = new Picture("whiteFlower.jpg");
+		flower.blur(80, 80, 200, 500);
+		flower.explore();
 	}
 
 	/**
@@ -144,9 +147,10 @@ public class PictureTester {
 		// testMirrorDiagonal();
 		// testCollage();
 		// testCopy();
-		 testmyCollage();
+		// testmyCollage();
 		// testEdgeDetection();
 		// testEdgeDetection2();
+		testBlur();
 		// testChromakey();
 		// testEncodeAndDecode();
 		// testGetCountRedOverValue(250);

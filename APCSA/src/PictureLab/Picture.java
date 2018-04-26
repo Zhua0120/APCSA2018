@@ -22,8 +22,8 @@ public class Picture extends SimplePicture {
 	 */
 	public Picture() {
 		/*
-		 * not needed but use it to show students the implicit call to super() child
-		 * constructors always call a parent constructor
+		 * not needed but use it to show students the implicit call to super()
+		 * child constructors always call a parent constructor
 		 */
 		super();
 	}
@@ -78,8 +78,8 @@ public class Picture extends SimplePicture {
 	/**
 	 * Method to return a string with information about this picture.
 	 * 
-	 * @return a string with information about the picture such as fileName, height
-	 *         and width.
+	 * @return a string with information about the picture such as fileName,
+	 *         height and width.
 	 */
 	public String toString() {
 		String output = "Picture, filename " + getFileName() + " height " + getHeight() + " width " + getWidth();
@@ -143,8 +143,8 @@ public class Picture extends SimplePicture {
 	}
 
 	/**
-	 * Method that mirrors the picture around a vertical mirror in the center of the
-	 * picture from left to right
+	 * Method that mirrors the picture around a vertical mirror in the center of
+	 * the picture from left to right
 	 */
 	public void mirrorVertical() {
 		Pixel[][] pixels = this.getPixels2D();
@@ -309,8 +309,8 @@ public class Picture extends SimplePicture {
 	}
 
 	/**
-	 * copy from the passed fromPic to the specified startRow and startCol in the
-	 * current picture
+	 * copy from the passed fromPic to the specified startRow and startCol in
+	 * the current picture
 	 * 
 	 * @param fromPic
 	 *            the picture to copy from
@@ -413,7 +413,7 @@ public class Picture extends SimplePicture {
 		}
 	}
 
-	public void edgeDetection2(int edgeDist) {
+	public void edgeDetectionSecond(int edgeDist) {
 		Pixel leftPixel = null;
 		Pixel nextPixel = null;
 		Pixel[][] pixels = this.getPixels2D();
@@ -438,6 +438,40 @@ public class Picture extends SimplePicture {
 					}
 				}
 				leftPixel.setColor(Color.WHITE);
+			}
+		}
+	}
+
+	/**
+	 * Method to blur within a rectangle
+	 * 
+	 * @param x,
+	 *            y, (starting upper left corner), width and height (rectangle
+	 *            size for blurring)
+	 * 
+	 */
+
+	public void blur(int x, int y, int width, int height) {
+		Pixel[][] pixels = this.getPixels2D();
+		Pixel result = null;
+		for (int row = x; row < x + height; row++) {
+			for (int col = y; col < y + width; col++) {
+				result = pixels[row][col];
+				result.setBlue(
+						(pixels[row][col].getBlue() + pixels[row][col + 1].getBlue() + pixels[row][col - 1].getBlue()
+								+ pixels[row + 1][col + 1].getBlue() + pixels[row + 1][col].getBlue()
+								+ pixels[row + 1][col - 1].getBlue() + pixels[row - 1][col + 1].getBlue()
+								+ pixels[row - 1][col].getBlue() + pixels[row - 1][col - 1].getBlue()) / 9);
+				result.setRed(
+						(pixels[row][col].getRed() + pixels[row][col + 1].getRed() + pixels[row][col - 1].getRed()
+								+ pixels[row + 1][col + 1].getRed() + pixels[row + 1][col].getRed()
+								+ pixels[row + 1][col - 1].getRed() + pixels[row - 1][col + 1].getRed()
+								+ pixels[row - 1][col].getRed() + pixels[row - 1][col - 1].getRed()) / 9);
+				result.setGreen(
+						(pixels[row][col].getGreen() + pixels[row][col + 1].getGreen() + pixels[row][col - 1].getGreen()
+								+ pixels[row + 1][col + 1].getGreen() + pixels[row + 1][col].getGreen()
+								+ pixels[row + 1][col - 1].getGreen() + pixels[row - 1][col + 1].getGreen()
+								+ pixels[row - 1][col].getGreen() + pixels[row - 1][col - 1].getGreen()) / 9);
 			}
 		}
 	}
